@@ -195,7 +195,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: calc((100% / 3) - 2.6vw); /* Ajusta el ancho para tres elementos por fila con espacio entre ellos */
+    width: calc((100% / 2) - 2.6vw); /* Ajusta el ancho para tres elementos por fila con espacio entre ellos */
     height: calc((100vw / 3) - 2.6vw); /* Ajusta la altura para que sea proporcional al ancho */
     overflow: hidden;
     border-radius: 0.8vw;
