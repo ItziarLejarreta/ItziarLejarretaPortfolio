@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bariol:wght@400;700&display=swap');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+
+body {
+    font-family: 'Bariol', sans-serif;
+    background-color: #008080;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el body se expanda al tamaño del contenido */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+}
+
+header {
+    position: relative;
+    padding: 2vw;
+    background-color: #00000045;
+    border-bottom: 0.2vw solid #5FBFBF;
+    box-shadow: 0 0.4vw 0.8vw rgba(0, 0, 0, 0.5);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+header h1, header h2 {
+    margin: 0;
+    color: #5FBFBF;
+    text-shadow: 0.1vw 0.1vw 0.2vw rgba(0, 0, 0, 0.5);
+    text-size-adjust: 100%;
+}
+
+header h1 {
+    font-size: 6vw;
+}
+
+header h2 {
+    font-size: 2vw;
+}
+
+.logo-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 20vw;
+    max-width: 200px;
+    max-height: 200px;
+    min-width: 100px;
+    min-height: 100px;
+    border-radius: 50%;
+    border: 0.5vw solid rgba(0, 0, 0, 0.5);
+    background-color: #5FBFBF;
+    overflow: hidden;
+    box-shadow: inset 0 0 0.5vw rgba(0, 0, 0, 0.3), 0 0 1vw rgba(0, 0, 0, 0.5), inset 0 0 1.5vw rgba(0, 0, 0, 0.2);
+}
+
+.logo-box::before {
+    content: "";
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    border: 0.5vw solid rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    box-shadow: 0 0 1.5vw rgba(0, 0, 0, 0.2);
+    background-color: #5FBFBF;
+    z-index: -1;
+}
+
+.logo-box img {
+    transition: opacity 0.5s ease, transform 0.3s ease;
+    position: absolute;
+}
+
+.logo {
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
+
+.logo-hover {
+    width: 110%;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    filter: brightness(1.1);
+}
+
+.logo-box:hover .logo {
+    opacity: 0;
+}
+
+.logo-box:hover .logo-hover {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform 0.3s ease, opacity 0.5s ease;
+}
+
+.titles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+}
+
+.frase-contenedor {
+    padding: 1vw;
+    margin-bottom: 1vw;
+    position: relative;
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.42);
+    max-width: 30vw;
+    border: 0.3vw solid #008080;
+    box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.5);
+}
+
+.frase {
+    font-family: "Caveat", serif;
+    color:#5FBFBF;
+    margin: 0;
+    font-size: 3vw;
+    padding-bottom: 3vw;
+}
+
+.patas {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    bottom: 0;
+    right: 10vw;
+    transform: translate(50%, 50%);
+    width: auto;
+}
+
+.pata {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4vw;
+    height: 4vw;
+    margin: 0.5vw;
+    border: 0.3vw solid #008080;
+    border-radius: 50%;
+    background-color: #005050;
+    box-shadow: inset 0 0 0.5vw rgba(0, 0, 0, 0.3), 0 0 1vw rgba(0, 0, 0, 0.5), inset 0 0 1.5vw rgba(0, 0, 0, 0.2);
+}
+
+.pata img {
+    width: 2.5vw;
+    height: 2.5vw;
+}
+
+.pata:hover {
+    box-shadow: 0 0 1vw #00ffff, 0 0 1vw #00ffff;
+    transform: scale(1.2);
+}
+
+main {
+    flex: 1; /* Permite que el main crezca y ocupe el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2vw;
+    width: 100%;
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho total */
+    overflow-y: auto; /* Permite el desplazamiento vertical */
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.6vw;
+    justify-content: center;
+    margin-top: 2vw;
+}
+
+.gallery a,
+.gallery-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc((100% / 3) - 2.6vw); /* Ajusta el ancho para tres elementos por fila con espacio entre ellos */
+    height: calc((100vw / 3) - 2.6vw); /* Ajusta la altura para que sea proporcional al ancho */
+    overflow: hidden;
+    border-radius: 0.8vw;
+    border: 0.3vw solid #008080;
+    box-shadow: 0.5vw 0.5vw 1vw rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #005050;
+}
+
+.gallery a:hover,
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0.8vw 1.6vw rgba(0, 0, 0, 0.3);
+}
+
+.gallery img,
+.gallery-video {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.3s ease;
+    object-fit: cover; /* Asegura que el contenido del video se ajuste bien dentro del contenedor */
+}
+
+.gallery img:hover,
+.gallery-video:hover {
+    transform: scale(1.05);
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.overlay-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 2.5vw;
+    font-weight: 700;
+    text-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.8);
+}
+
+.overlay-subtext {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 2vw;
+    text-shadow: 0.1vw 0.1vw 0.2vw rgba(0, 0, 0, 0.5);
+    padding: 2vw;
+}
+
+.image-container:hover .overlay {
+    opacity: 0;
+}
